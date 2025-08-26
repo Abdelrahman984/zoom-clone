@@ -11,6 +11,31 @@
   }
 }
 
+.cl-socialButtonsIconButton {
+  border-color: wheat;
+}
+.cl-socialButtonsProviderIcon__github {
+  filter: invert(1);
+}
+.cl-internal-rrswn7[data-variant="outline"] {
+  box-shadow: 0px 0px 0px 1px
+      color-mix(
+        in srgb,
+        transparent,
+        var(--clerk-color-border, var(--clerk-color-neutral, #ffffff)) 7%
+      ),
+    0px 2px 3px -1px rgba(255, 255, 255, 0.08),
+    0px 1px 0px 0px rgba(255, 255, 255, 0.02);
+}
+.cl-dividerLine {
+  background-color: color-mix(in srgb, transparent, #ffffff 7%);
+}
+.cl-internal-k1l1jd {
+  box-shadow: 0px 0px 2px 0px color-mix(in srgb, transparent, #ffffff 8%),
+    0px 1px 2px 0px color-mix(in srgb, transparent, #ffffff 6%),
+    0px 0px 0px 1px color-mix(in srgb, transparent, #ffffff 3%);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
