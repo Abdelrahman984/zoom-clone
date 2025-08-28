@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrackRoom
 
-## Getting Started
+TrackRoom is a Zoom-like meeting application built with **Next.js** and powered by **GetStream.io** for real-time communication. It allows users to schedule, join, and manage video meetings with ease.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+* 🔐 Authentication with Clerk
+* 🎥 Real-time video meetings with GetStream.io
+* 📅 Schedule, join, and manage meetings
+* 📂 Organized navigation with sidebar and top navigation bar
+* 👥 Personal meeting rooms
+* 📜 Meeting history (upcoming, previous, recordings)
+* 🎨 Responsive UI with TailwindCSS
+
+---
+
+## 📦 Tech Stack
+
+* [Next.js](https://nextjs.org/) – React framework for SSR and routing
+* [GetStream.io](https://getstream.io/) – Video/Audio streaming SDK
+* [Clerk](https://clerk.com/) – Authentication & User Management
+* [TailwindCSS](https://tailwindcss.com/) – Styling
+* [TypeScript](https://www.typescriptlang.org/) – Type safety
+* [ShadCN/UI](https://ui.shadcn.com/) – UI components
+
+---
+
+## 📂 Project Structure
+
+```bash
+track-room/
+├── app/                # Next.js app router
+├── components/         # Reusable UI components
+├── constants/          # Sidebar links, avatar images, etc.
+├── public/             # Static assets (icons, images)
+│   ├── icons/          # SVG icons
+│   └── images/         # Avatars & other images
+├── styles/             # Global styles
+└── ...
+```
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Abdelrahman984/track-room.git
+cd track-room
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env.local` file in the root folder and add:
+
+```env
+NEXT_PUBLIC_STREAM_API_KEY=your_stream_api_key
+STREAM_API_SECRET=your_stream_secret
+NEXT_PUBLIC_CLERK_FRONTEND_API=your_clerk_frontend_api
+CLERK_SECRET_KEY=your_clerk_secret
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Deployment
 
-## Learn More
+This project is ready for deployment on [Vercel](https://vercel.com/). Just connect your GitHub repository, set up environment variables, and deploy.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🖼️ Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+👉 [TrackRoom on Vercel](https://track-room.vercel.app/)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📸 Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<img width="598" height="725" alt="image" src="https://github.com/user-attachments/assets/ebf5a9da-edd2-4c2b-9776-de59fd65b9e9" />
+<img width="1892" height="860" alt="image" src="https://github.com/user-attachments/assets/bbe1e856-1c78-4b35-8066-58522fb8de24" />
+<img width="1369" height="762" alt="image" src="https://github.com/user-attachments/assets/77962042-bb50-4642-8904-23f5d2d78788" />
+<img width="1901" height="873" alt="image" src="https://github.com/user-attachments/assets/03153f9e-8c2a-4000-9042-69c47e30b532" />
+<img width="1906" height="875" alt="image" src="https://github.com/user-attachments/assets/0a2ab714-67f1-4209-8241-aa7599940fa7" />
+
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+* **Abdelrahman Alaa** – [GitHub](https://github.com/Abdelrahman984)
