@@ -13,6 +13,11 @@ const Meeting = ({ params: { id } }: { params: { id: string } }) => {
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const { call, isCallLoading } = useGetCallById(id);
   const router = useRouter();
+
+  if (isCallLoading || !call) {
+    return <Loader />;
+  }
+
   return (
     <main className="h-screen w-full">
       <StreamCall call={call}>
