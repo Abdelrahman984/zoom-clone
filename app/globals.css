@@ -231,6 +231,10 @@
   height: 40px;
 }
 
+[data-slot="dialog-close"] {
+  cursor: pointer;
+}
+
 .glassmorphism {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
