@@ -11,31 +11,6 @@
   }
 }
 
-.cl-socialButtonsIconButton {
-  border-color: wheat;
-}
-.cl-socialButtonsProviderIcon__github {
-  filter: invert(1);
-}
-.cl-internal-rrswn7[data-variant="outline"] {
-  box-shadow: 0px 0px 0px 1px
-      color-mix(
-        in srgb,
-        transparent,
-        var(--clerk-color-border, var(--clerk-color-neutral, #ffffff)) 7%
-      ),
-    0px 2px 3px -1px rgba(255, 255, 255, 0.08),
-    0px 1px 0px 0px rgba(255, 255, 255, 0.02);
-}
-.cl-dividerLine {
-  background-color: color-mix(in srgb, transparent, #ffffff 7%);
-}
-.cl-internal-k1l1jd {
-  box-shadow: 0px 0px 2px 0px color-mix(in srgb, transparent, #ffffff 8%),
-    0px 1px 2px 0px color-mix(in srgb, transparent, #ffffff 6%),
-    0px 0px 0px 1px color-mix(in srgb, transparent, #ffffff 3%);
-}
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -109,6 +84,18 @@
     }
     to {
       height: 0;
+    }
+  }
+
+  @keyframes show {
+    from {
+      animation-timing-function: ease-in;
+      width: 0%;
+    }
+
+    to {
+      animation-timing-function: ease-in;
+      width: 100%;
     }
   }
 
@@ -231,6 +218,64 @@
   height: 40px;
 }
 
+/* ==== clerk class override ===== */
+
+.cl-userButtonPopoverActionButtonIcon {
+  color: white;
+}
+
+.cl-logoBox {
+  height: 40px;
+}
+.cl-dividerLine {
+  background: #252a41;
+  height: 2px;
+}
+
+.cl-socialButtonsIconButton {
+  border: 3px solid #565761;
+}
+
+.cl-internal-wkkub3 {
+  color: white;
+}
+
+.cl-userButtonPopoverActionButton {
+  color: white;
+}
+.cl-userButtonPopoverActionButton:hover {
+  color: var(--color-blue-400);
+}
+.cl-internal-1roaz2h {
+  color: var(--color-blue-400);
+}
+
+/* custom dark styles for "Clerk" social button */
+.cl-socialButtonsIconButton {
+  border-color: wheat;
+}
+.cl-socialButtonsProviderIcon__github {
+  filter: invert(1);
+}
+.cl-internal-rrswn7[data-variant="outline"] {
+  box-shadow: 0px 0px 0px 1px
+      color-mix(
+        in srgb,
+        transparent,
+        var(--clerk-color-border, var(--clerk-color-neutral, #ffffff)) 7%
+      ),
+    0px 2px 3px -1px rgba(255, 255, 255, 0.08),
+    0px 1px 0px 0px rgba(255, 255, 255, 0.02);
+}
+.cl-dividerLine {
+  background-color: color-mix(in srgb, transparent, #ffffff 7%);
+}
+.cl-internal-k1l1jd {
+  box-shadow: 0px 0px 2px 0px color-mix(in srgb, transparent, #ffffff 8%),
+    0px 1px 2px 0px color-mix(in srgb, transparent, #ffffff 6%),
+    0px 0px 0px 1px color-mix(in srgb, transparent, #ffffff 3%);
+}
+
 [data-slot="dialog-close"] {
   cursor: pointer;
 }
@@ -253,14 +298,3 @@
   display: block;
   animation: show 0.7s forwards linear;
 }
-
-/* @keyframes show {
-  0% {
-    animation-timing-function: ease-in;
-    width: 0%;
-  }
-
-  100% {
-    animation-timing-function: ease-in;
-    width: 100%;
-  } */
