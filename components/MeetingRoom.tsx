@@ -7,6 +7,7 @@ import {
   CallingState,
   PaginatedGridLayout,
   SpeakerLayout,
+  useCall,
   useCallStateHooks,
 } from "@stream-io/video-react-sdk";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -32,7 +33,7 @@ const MeetingRoom = () => {
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
   const { useCallCallingState, useCallEndedAt } = useCallStateHooks();
-
+  const call = useCall();
   // for more detail about types of CallingState see: https://getstream.io/video/docs/react/ui-cookbook/ringing-call/#incoming-call-panel
   const callingState = useCallCallingState();
   const callEndedAt = useCallEndedAt();
@@ -72,40 +73,50 @@ const MeetingRoom = () => {
         </div>
       </div>
       {/* video layout and call controls */}
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap mx-auto">
-        <CallControls onLeave={() => router.push(`/`)} />
+      <div className="fixed bottom-0 left-0 md:left-[250px] right-0 flex justify-center px-2">
+        <div className="flex items-center justify-center gap-5 flex-wrap w-fit">
+          <CallControls
+            onLeave={() => {
+              router.push(`/`);
+              call?.leave();
+            }}
+          />
 
-        <DropdownMenu>
-          <div className="flex items-center">
-            <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b] mr-1 ">
-              <LayoutList size={20} className="text-white" />
-            </DropdownMenuTrigger>
-          </div>
-          <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
-            {["Grid", "Speaker-Left", "Speaker-Right"].map((item, index) => (
-              <div key={index}>
-                <DropdownMenuItem
-                  onClick={() =>
-                    setLayout(item.toLowerCase() as CallLayoutType)
-                  }
-                >
-                  {item}
-                </DropdownMenuItem>
-                {/* Except last item */}
-                {index !== 2 && (
-                  <DropdownMenuSeparator className="border-dark-1" />
-                )}
-              </div>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <CallStatsButton />
-        <button onClick={() => setShowParticipants((prev) => !prev)}>
-          <div className=" cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
-            <Users size={20} className="text-white" />
-          </div>
-        </button>
-        {!isPersonalRoom && <EndCallButton />}
+          <DropdownMenu>
+            <div className="flex items-center">
+              <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b] mr-1 ">
+                <LayoutList size={20} className="text-white" />
+              </DropdownMenuTrigger>
+            </div>
+
+            <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
+              {["Grid", "Speaker-Left", "Speaker-Right"].map((item, index) => (
+                <div key={index}>
+                  <DropdownMenuItem
+                    onClick={() =>
+                      setLayout(item.toLowerCase() as CallLayoutType)
+                    }
+                  >
+                    {item}
+                  </DropdownMenuItem>
+                  {index !== 2 && (
+                    <DropdownMenuSeparator className="border-dark-1" />
+                  )}
+                </div>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <CallStatsButton />
+
+          <button onClick={() => setShowParticipants((prev) => !prev)}>
+            <div className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]">
+              <Users size={20} className="text-white" />
+            </div>
+          </button>
+
+          {!isPersonalRoom && <EndCallButton />}
+        </div>
       </div>
     </section>
   );
