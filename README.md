@@ -1,36 +1,36 @@
-# TrackRoom
+# ZoomClone
 
-TrackRoom is a Zoom-like meeting application built with **Next.js** and powered by **GetStream.io** for real-time communication. It allows users to schedule, join, and manage video meetings with ease.
+ZoomClone is a Zoom-like meeting application built with **Next.js** and powered by **GetStream.io** for real-time communication. It allows users to schedule, join, and manage video meetings with ease.
 
 ---
 
 ## 🚀 Features
 
-* 🔐 Authentication with Clerk
-* 🎥 Real-time video meetings with GetStream.io
-* 📅 Schedule, join, and manage meetings
-* 📂 Organized navigation with sidebar and top navigation bar
-* 👥 Personal meeting rooms
-* 📜 Meeting history (upcoming, previous, recordings)
-* 🎨 Responsive UI with TailwindCSS
+- 🔐 Authentication with Clerk
+- 🎥 Real-time video meetings with GetStream.io
+- 📅 Schedule, join, and manage meetings
+- 📂 Organized navigation with sidebar and top navigation bar
+- 👥 Personal meeting rooms
+- 📜 Meeting history (upcoming, previous, recordings)
+- 🎨 Responsive UI with TailwindCSS
 
 ---
 
 ## 📦 Tech Stack
 
-* [Next.js](https://nextjs.org/) – React framework for SSR and routing
-* [GetStream.io](https://getstream.io/) – Video/Audio streaming SDK
-* [Clerk](https://clerk.com/) – Authentication & User Management
-* [TailwindCSS](https://tailwindcss.com/) – Styling
-* [TypeScript](https://www.typescriptlang.org/) – Type safety
-* [ShadCN/UI](https://ui.shadcn.com/) – UI components
+- [Next.js](https://nextjs.org/) – React framework for SSR and routing
+- [GetStream.io](https://getstream.io/) – Video/Audio streaming SDK
+- [Clerk](https://clerk.com/) – Authentication & User Management
+- [TailwindCSS](https://tailwindcss.com/) – Styling
+- [TypeScript](https://www.typescriptlang.org/) – Type safety
+- [ShadCN/UI](https://ui.shadcn.com/) – UI components
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-track-room/
+zoom-clone/
 ├── app/                # Next.js app router
 ├── components/         # Reusable UI components
 ├── constants/          # Sidebar links, avatar images, etc.
@@ -48,8 +48,8 @@ track-room/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Abdelrahman984/track-room.git
-cd track-room
+git clone https://github.com/Abdelrahman984/zoom-clone.git
+cd zoom-clone
 ```
 
 ### 2. Install dependencies
@@ -87,7 +87,7 @@ This project is ready for deployment on [Vercel](https://vercel.com/). Just conn
 
 ## 🖼️ Live Demo
 
-👉 [TrackRoom on Vercel](https://track-room.vercel.app/)
+👉 [ZoomClone on Vercel](https://zoom-clone.vercel.app/)
 
 ---
 
@@ -99,7 +99,6 @@ This project is ready for deployment on [Vercel](https://vercel.com/). Just conn
 <img width="1901" height="873" alt="image" src="https://github.com/user-attachments/assets/03153f9e-8c2a-4000-9042-69c47e30b532" />
 <img width="1906" height="875" alt="image" src="https://github.com/user-attachments/assets/0a2ab714-67f1-4209-8241-aa7599940fa7" />
 
-
 ---
 
 ## 📜 License
@@ -110,4 +109,4 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-* **Abdelrahman Alaa** – [GitHub](https://github.com/Abdelrahman984)
+- **Abdelrahman Alaa** – [GitHub](https://github.com/Abdelrahman984)

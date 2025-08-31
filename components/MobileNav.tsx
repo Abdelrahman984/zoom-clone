@@ -36,7 +36,7 @@ const MobileNav = () => {
               height={32}
             />
             <span className="text-white text-[26px] font-extrabold">
-              Track Room
+              Zoom Clone
             </span>
           </Link>
           <div className="flex flex-col justify-between h-[calc(100vh-72px)] overflow-y-auto">

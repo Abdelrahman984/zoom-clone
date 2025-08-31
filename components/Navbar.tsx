@@ -22,7 +22,7 @@ const Navbar = () => {
           height={40}
         />
         <span className="text-white text-[26px] font-extrabold max-sm:hidden">
-          Track Room
+          Zoom Clone
         </span>
       </Link>
       <div className="flex-between gap-5">

@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Track Room",
+  title: "Zoom Clone",
   description: "A virtual meeting room for team collaboration",
   creator: "Abdelrahman Alaa",
   icons: {
