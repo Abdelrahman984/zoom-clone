@@ -101,6 +101,15 @@ This project is ready for deployment on [Vercel](https://vercel.com/). Just conn
 
 ---
 
+## 📺 Source
+
+This project was built by following this tutorial:  
+[React Tutorial on YouTube](https://youtu.be/R8CIO1DZ2b8)
+
+> I followed the video step by step to practice and learn React.
+
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License.
