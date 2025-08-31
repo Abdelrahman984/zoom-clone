@@ -1,13 +1,13 @@
 "use client";
 
 import { Call, CallRecording } from "@stream-io/video-react-sdk";
-
 import Loader from "./Loader";
 import { useGetCalls } from "@/hooks/useGetCalls";
 import MeetingCard from "./MeetingCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 
 const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
   const router = useRouter();
@@ -72,7 +72,26 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
         <div className="mb-4 flex justify-end">
           <Button
             variant="destructive"
-            onClick={() => setCleared(true)}
+            onClick={async () => {
+              if (type === "ended") {
+                // Delete all ended calls from Stream backend
+                if (Array.isArray(calls)) {
+                  await Promise.all(
+                    (calls as Call[]).map(async (call) => {
+                      if (typeof call.delete === "function") {
+                        try {
+                          await call.delete();
+                        } catch {}
+                      }
+                    })
+                  );
+                }
+              } else if (type === "recordings") {
+                // No direct SDK method to delete recordings; add REST API call here if needed
+                // For now, just clear UI
+              }
+              setCleared(true);
+            }}
             className="px-4 py-2"
           >
             Clear History
